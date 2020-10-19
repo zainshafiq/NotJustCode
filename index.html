@@ -15,10 +15,53 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
+
+    <style>
+        * {box-sizing: border-box}
+        .mySlides1, .mySlides2 {display: none}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+         }
+
+         /* On hover, add a grey background color */
+         .prev:hover, .next:hover {
+             background-color: #f1f1f1;
+             color: black;
+         }
+    </style>
+
 <!--
 Vanilla Template
 https://templatemo.com/tm-526-vanilla
 -->
+    
 <body>
     <div class="fixed-side-navbar">
         <ul class="nav flex-column">
@@ -189,54 +232,22 @@ https://templatemo.com/tm-526-vanilla
                     <div class="wrapper">
                     <section id="first-tab-group" class="tabgroup">
                       <div id="tab1">
-                          <div class="carousel-inner">
-                                  <div class="carousel-item slider-image item active">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="img/3rd-item.jpg" data-slide-to="0" alt="">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="carousel-item slider-image item">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="img/Azeezat.png" data-slide-to="1">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="carousel-item slider-image item">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="img/3rd-item.jpg" data-slide-to="2">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="carousel-item slider-image item">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="img/Azeezat.png" data-slide-to="3">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="carousel-item slider-image item">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="img/3rd-item.jpg" data-slide-to="3">
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="carousel-item slider-image item">
-                                      <div class="item-wrapper">
-                                          <img class="d-block w-100" src="Azeezat.png" data-slide-to="3">
-                                      </div>
-                                  </div>
+                          <div class="slideshow-container">
+                              <div class="mySlides1">
+                                  <img src="img/Azeezat.png" style="width:100%">
                               </div>
-                              
-                              <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#sdQtKkesLZ">
-                                  <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
-                                  <span class="sr-only">Previous</span>
-                              </a>
-                              
-                              <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#sdQtKkesLZ">
-                                  <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
-                                  <span class="sr-only">Next</span>
-                              </a>
-                          </div>
+
+                             <div class="mySlides1">
+                                 <img src="img/1st-item.jpg" style="width:100%">
+                             </div>
+
+                             <div class="mySlides1">
+                                 <img src="img/Azeezat.png" style="width:100%">
+                             </div>
+
+                             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                             <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                          </div>  
                         <p style="font-size: 20px;"><b> Introduction Vlog </b></p>
                       </div>
                       <div id="tab2">
@@ -360,6 +371,26 @@ https://templatemo.com/tm-526-vanilla
             } // End if
           });
         });
+        
+        var slideIndex = [1,1];
+        var slideId = ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) {slideIndex[no] = 1}    
+            if (n < 1) {slideIndex[no] = x.length}
+            for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";  
+            }
+            x[slideIndex[no]-1].style.display = "block";  
+        }
     </script>
 </body>
 </html>
