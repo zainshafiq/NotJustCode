@@ -577,17 +577,17 @@ https://templatemo.com/tm-526-vanilla
         
         var slideIndex = 1;
         showSlides(slideIndex);
-        showSlides2(slideIndex);
+        showSlides2(slideIndex2);
         
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
-            showSlides2(slideIndex += n);
+            showSlides2(slideIndex2 += n);
         }
 
         function currentSlide(n) {
             showSlides(slideIndex = n);
-            showSlides2(slideIndex = n);
+            showSlides2(slideIndex2 = n);
         }
 
         function showSlides(n) {
@@ -614,8 +614,8 @@ https://templatemo.com/tm-526-vanilla
             var slides2  = document.getElementsByClassName("mySlides2");
             var dots2 = document.getElementsByClassName("demo2");
             var captionText2 = document.getElementById("caption2");
-            if (n > slides2.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
+            if (n > slides2.length) {slideIndex2 = 1}
+            if (n < 1) {slideIndex2 = slides.length}
             for (i = 0; i < slides2.length; i++) {
                 slides2[i].style.display = "none";
             }
@@ -623,9 +623,9 @@ https://templatemo.com/tm-526-vanilla
                 dots2[i].className = dots2[i].className.replace(" active", "");
             }
             
-            slides2[slideIndex-1].style.display = "block";
-            dots2[slideIndex-1].className += " active";
-            captionText2.innerHTML = dots2[slideIndex-1].alt;
+            slides2[slideIndex2-1].style.display = "block";
+            dots2[slideIndex2-1].className += " active";
+            captionText2.innerHTML = dots2[slideIndex2-1].alt;
         }
         
     </script>
