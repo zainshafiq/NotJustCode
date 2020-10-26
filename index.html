@@ -48,6 +48,10 @@
         .mySlides {
             display: none;
         }
+        
+        .mySlides2 {
+            display: none;
+        }
 
         /* Add a pointer when hovering over the thumbnail images */
         .cursor {
@@ -483,7 +487,7 @@ https://templatemo.com/tm-526-vanilla
 
             <div class="row">
                 <div class="column">
-                    <img class="demo cursor" src="img/slides_scrum_2/sr1.png" style="width:100%" onclick="currentSlide(1)" alt="Slide 1">
+                    <img class="demo2 cursor" src="img/slides_scrum_2/sr1.png" style="width:100%" onclick="currentSlide(1)" alt="Slide 1">
                 </div>
             
                 <div class="column">
@@ -571,13 +575,17 @@ https://templatemo.com/tm-526-vanilla
         
         var slideIndex = 1;
         showSlides(slideIndex);
+        showSlides2(slideIndex);
+        
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
+            showSlides2(slideIndex += n);
         }
 
         function currentSlide(n) {
             showSlides(slideIndex = n);
+            showSlides2(slideIndex = n);
         }
 
         function showSlides(n) {
@@ -617,6 +625,7 @@ https://templatemo.com/tm-526-vanilla
             dots2[slideIndex-1].className += " active";
             captionText2.innerHTML = dots2[slideIndex-1].alt;
         }
+        
     </script>
 </body>
 </html>
