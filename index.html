@@ -382,7 +382,7 @@ https://templatemo.com/tm-526-vanilla
         });
         
         var slideIndex = [1,1];
-        var slideId = ["mySlides1", "mySlides2", "mySlides3"];
+        var slideId = ["mySlides1", "mySlides2"];
         showDivs(1, 0);
         showDivs(1, 1);
 
@@ -400,6 +400,27 @@ https://templatemo.com/tm-526-vanilla
             }
   
             x[slideIndex[no]-1].style.display = "block";  
+        }
+        
+        var slideIndex2 = [1,1];
+        var slideId2 = ["mySlides3", "mySlides4"];
+        showDivs2(1, 0);
+        showDivs2(1, 1);
+
+        function plusDivs2(n, no) {
+            showDivs2(slideIndex2[no] += n, no);
+        }
+
+        function showDivs2(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId2[no]);
+            if (n > x.length) {slideIndex2[no] = 1}
+            if (n < 1) {slideIndex2[no] = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+  
+            x[slideIndex2[no]-1].style.display = "block";  
         }
         
     </script>
